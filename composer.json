@@ -1,0 +1,40 @@
+{
+    "name": "mugnate/oauth2-ecwid",
+    "description": "Ecwid OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "authorization",
+        "authentication",
+        "idp",
+        "identity",
+        "sso",
+        "single sign on",
+        "Ecwid"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikolay Votintsev",
+            "email": "nikolay@votintsev.ru"
+        }
+    ],
+    "require": {
+        "league/oauth2-client": "^2.2",
+        "fzaninotto/faker": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2",
+        "mockery/mockery": "^0.9.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mugnate\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mugnate\\OAuth2\\Client\\Provider\\Tests\\": "tests/src"
+        }
+    }
+}
