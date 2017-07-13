@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/mugnate/oauth2-ecwid.svg?style=flat-square)](https://scrutinizer-ci.com/g/mugnate/oauth2-ecwid)
 [![Total Downloads](https://img.shields.io/packagist/dt/mugnate/oauth2-ecwid.svg?style=flat-square)](https://packagist.org/packages/mugnate/oauth2-ecwid)
 
-This package provides LinkedIn OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+This package provides Ecwid (https://www.ecwid.com/) OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
 ## Installation
 
