@@ -32,6 +32,33 @@ class EcwidTest extends TestCase
         parent::tearDown();
     }
 
+    public function testRequiredArgument()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->provider = new EcwidProvider([
+            'clientId' => null,
+            'clientSecret' => null,
+            'redirectUri' => null,
+        ]);
+
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->provider = new EcwidProvider([
+            'clientId' => 'mock_client_id',
+            'clientSecret' => null,
+            'redirectUri' => null,
+        ]);
+
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->provider = new EcwidProvider([
+            'clientId' => 'mock_client_id',
+            'clientSecret' => 'mock_client_secret',
+            'redirectUri' => null,
+        ]);
+    }
+
     public function testAuthorizationUrl()
     {
         $url = $this->provider->getAuthorizationUrl();

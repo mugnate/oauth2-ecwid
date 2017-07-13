@@ -15,6 +15,19 @@ class Ecwid extends AbstractProvider
      */
     const ACCESS_TOKEN_RESOURCE_OWNER_ID = 'store_id';
 
+    public function __construct(array $options = [], array $collaborators = [])
+    {
+        if (empty($options['clientId'])) {
+            throw new \InvalidArgumentException('The "clientId" option not set. Please set it.');
+        } elseif (empty($options['clientSecret'])) {
+            throw new \InvalidArgumentException('The "clientSecret" option not set. Please set it.');
+        } elseif (empty($options['redirectUri'])) {
+            throw new \InvalidArgumentException('The "redirectUri" option not set. Please set it.');
+        }
+
+        parent::__construct($options, $collaborators);
+    }
+
     public function getBaseAuthorizationUrl()
     {
         return 'https://my.ecwid.com/api/oauth/authorize';
