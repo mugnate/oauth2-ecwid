@@ -2,7 +2,6 @@
 
 namespace Mugnate\OAuth2\Client\Provider;
 
-
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 class EcwidStoreProfile implements ResourceOwnerInterface
