@@ -3,9 +3,12 @@
 namespace Mugnate\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
+use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 
 class EcwidStoreProfile implements ResourceOwnerInterface
 {
+    use ArrayAccessorTrait;
+
     /**
      * Raw response
      *
@@ -30,7 +33,7 @@ class EcwidStoreProfile implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return isset($this->response['generalInfo']['storeId']) ? $this->response['generalInfo']['storeId'] : null;
+        return $this->getValueByKey($this->response, 'generalInfo.storeId');
     }
 
 
@@ -41,7 +44,7 @@ class EcwidStoreProfile implements ResourceOwnerInterface
      */
     public function getEmail()
     {
-        return isset($this->response['account']['accountEmail']) ? $this->response['account']['accountEmail'] : null;
+        return $this->getValueByKey($this->response, 'account.accountEmail');
     }
 
 
